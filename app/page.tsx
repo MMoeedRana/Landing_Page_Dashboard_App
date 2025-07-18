@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -44,7 +44,6 @@ export default function DashboardLanding() {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
   const { scrollYProgress } = useScroll()
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
 
   useEffect(() => {
     setMounted(true)
@@ -458,7 +457,7 @@ export default function DashboardLanding() {
                 name: "Michael Chen",
                 role: "Product Manager",
                 content:
-                  "The best dashboard platform we've used. Beautiful design meets powerful functionality perfectly.",
+                  "The best dashboard platform we&apos;ve used. Beautiful design meets powerful functionality perfectly.",
                 avatar: "MC",
               },
               {
@@ -483,7 +482,7 @@ export default function DashboardLanding() {
                         <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                       ))}
                     </div>
-                    <p className="text-muted-foreground mb-6 leading-relaxed">"{testimonial.content}"</p>
+                    <p className="text-muted-foreground mb-6 leading-relaxed">&ldquo;{testimonial.content}&rdquo;</p>
                     <div className="flex items-center">
                       <Avatar className="w-10 h-10 mr-3">
                         <AvatarFallback>{testimonial.avatar}</AvatarFallback>
